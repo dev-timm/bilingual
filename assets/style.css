@@ -12,6 +12,67 @@ body {
     background-color: #F1F3FA;
 }
 
+.container {
+    width: 920px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.btn-primary {
+    width: fit-content;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    background-color: #CF01A2;
+    border-radius: 8px;
+    padding: 24px 32px;
+}
+
+.btn-primary:hover {
+    background-color: #F41BC5;
+    cursor: pointer;
+}
+
+.highscore-display {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.score {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #CF01A2;
+}
+
 .navbar {
     padding: 40px;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    gap: 48px;
+    align-items: center;
+}
+
+.explainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 24px;
+    font-weight: 700;
 }
