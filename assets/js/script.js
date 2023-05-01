@@ -112,10 +112,12 @@ const foods = [
 const cards = document.querySelectorAll('.card');
 const questionWord = document.querySelector('.word');
 const correctAnswers = document.querySelector('.correct-answers')
+const timer = document.querySelector('.timer');
 
 let randomizedFoodNames = [];
 let randomIndex = Math.floor(Math.random() * foods.length);
 let correctAnswerCount = 0;
+let currentTime = 45;
 
 // shuffle the array with help from https://www.youtube.com/watch?v=5sNGqsMpW1E
 // only access the first 8 items of the foods array
@@ -161,4 +163,17 @@ for (let card of cards) {
             card.classList.add('answer-wrong');
         }
     })
+};
+
+// set up timer with help from https://www.youtube.com/watch?v=GhePFBkdNYk
+let runTimer = setInterval(countDown, 1000);
+
+function countDown() {
+    currentTime--
+    timer.innerText = currentTime;
+
+    if (currentTime === 0) {
+        clearInterval(runTimer);
+        alert('Game Over!');
+    }
 };
