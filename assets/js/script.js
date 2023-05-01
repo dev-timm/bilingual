@@ -146,3 +146,14 @@ function displayCards() {
 };
 
 displayCards();
+
+// evaluate if clicked image matches the correct answer
+for (let card of cards) {
+    card.firstChild.addEventListener('click', (e) => {
+        if (e.target.alt === questionWord.innerText) {
+            console.log('awesome!');
+        } else {
+            console.log('wrong!')
+        }
+    })
+};
