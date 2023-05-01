@@ -151,9 +151,9 @@ displayCards();
 for (let card of cards) {
     card.firstChild.addEventListener('click', (e) => {
         if (e.target.alt === questionWord.innerText) {
-            console.log('awesome!');
+            card.classList.add('answer-right');
         } else {
-            console.log('wrong!')
+            card.classList.add('answer-wrong');
         }
     })
 };
