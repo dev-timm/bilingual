@@ -111,8 +111,11 @@ const foods = [
 
 const cards = document.querySelectorAll('.card');
 const questionWord = document.querySelector('.word');
+const correctAnswers = document.querySelector('.correct-answers')
+
 let randomizedFoodNames = [];
 let randomIndex = Math.floor(Math.random() * foods.length);
+let correctAnswerCount = 0;
 
 // shuffle the array with help from https://www.youtube.com/watch?v=5sNGqsMpW1E
 // only access the first 8 items of the foods array
@@ -152,6 +155,8 @@ for (let card of cards) {
     card.firstChild.addEventListener('click', (e) => {
         if (e.target.alt === questionWord.innerText) {
             card.classList.add('answer-right');
+            correctAnswerCount++;
+            correctAnswers.innerHTML = `${correctAnswerCount}`;
         } else {
             card.classList.add('answer-wrong');
         }
