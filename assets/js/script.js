@@ -109,4 +109,40 @@ const foods = [
     }
 ];
 
+const cards = document.querySelectorAll('.card');
+const questionWord = document.querySelector('.word');
+let randomizedFoodNames = [];
+let randomIndex = Math.floor(Math.random() * foods.length);
 
+// shuffle the array with help from https://www.youtube.com/watch?v=5sNGqsMpW1E
+// only access the first 8 items of the foods array
+let randomizedFoods = foods.sort(() => 0.5 - Math.random()).slice(0, 8);
+
+// take each name of randomized array and push it into a new array
+for (let randomizedFood of randomizedFoods) {
+    randomizedFoodNames.push(randomizedFood.name)
+}
+
+// select word based on foods array and randomIndex
+questionWord.textContent = foods[randomIndex].name;
+
+// check if questionWord is in the randomizedFoodName
+// if not randomize the array until it is
+function checkRandomizedFoods() { 
+    if (!randomizedFoodNames.includes(questionWord.textContent)) {
+        randomizedFoods.pop();
+        randomizedFoods.push(foods[randomIndex])
+        randomizedFoods.sort(() => 0.5 - Math.random());
+    }
+};
+
+checkRandomizedFoods();
+
+// display cards on the board
+function displayCards() {
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].innerHTML = `<img src="${randomizedFoods[i].img}" alt="${randomizedFoods[i].name}">`;
+    }
+};
+
+displayCards();
