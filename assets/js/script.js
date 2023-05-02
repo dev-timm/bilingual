@@ -3,7 +3,7 @@ const foods = [
         id: 0,
         name: 'apple',
         img: 'assets/images/card-apple.png',
-        translation : {
+        translation: {
             en: 'apple',
             de: 'Apfel'
         }
@@ -12,7 +12,7 @@ const foods = [
         id: 1,
         name: 'avocado',
         img: 'assets/images/card-avocado.png',
-        translation : {
+        translation: {
             en: 'avocado',
             de: 'Avocado'
         }
@@ -21,7 +21,7 @@ const foods = [
         id: 2,
         name: 'banana',
         img: 'assets/images/card-banana.png',
-        translation : {
+        translation: {
             en: 'banana',
             de: 'Banane'
         }
@@ -30,7 +30,7 @@ const foods = [
         id: 3,
         name: 'broccoli',
         img: 'assets/images/card-brokoli.png',
-        translation : {
+        translation: {
             en: 'broccoli',
             de: 'Brokkoli'
         }
@@ -39,7 +39,7 @@ const foods = [
         id: 4,
         name: 'cauliflower',
         img: 'assets/images/card-cauliflower.png',
-        translation : {
+        translation: {
             en: 'cauliflower',
             de: 'Blumenkohl'
         }
@@ -48,7 +48,7 @@ const foods = [
         id: 5,
         name: 'cherry',
         img: 'assets/images/card-cherry.png',
-        translation : {
+        translation: {
             en: 'cherry',
             de: 'Kirsche'
         }
@@ -57,7 +57,7 @@ const foods = [
         id: 6,
         name: 'chilli',
         img: 'assets/images/card-chilli.png',
-        translation : {
+        translation: {
             en: 'chilli',
             de: 'Chilli'
         }
@@ -66,7 +66,7 @@ const foods = [
         id: 7,
         name: 'coconut',
         img: 'assets/images/card-coconut.png',
-        translation : {
+        translation: {
             en: 'coconut',
             de: 'Kokosnuss'
         }
@@ -75,7 +75,7 @@ const foods = [
         id: 8,
         name: 'pepper',
         img: 'assets/images/card-pepper.png',
-        translation : {
+        translation: {
             en: 'pepper',
             de: 'Paprika'
         }
@@ -84,7 +84,7 @@ const foods = [
         id: 9,
         name: 'strawberry',
         img: 'assets/images/card-strawberry.png',
-        translation : {
+        translation: {
             en: 'strawberry',
             de: 'Erdbeere'
         }
@@ -93,7 +93,7 @@ const foods = [
         id: 10,
         name: 'tangerine',
         img: 'assets/images/card-tangerine.png',
-        translation : {
+        translation: {
             en: 'tangerine',
             de: 'Orange'
         }
@@ -102,7 +102,7 @@ const foods = [
         id: 11,
         name: 'tomato',
         img: 'assets/images/card-tomato.png',
-        translation : {
+        translation: {
             en: 'tomato',
             de: 'Tomate'
         }
@@ -114,56 +114,80 @@ const questionWord = document.querySelector('.word');
 const correctAnswers = document.querySelector('.correct-answers')
 const timer = document.querySelector('.timer');
 
-let randomizedFoodNames = [];
-let randomIndex = Math.floor(Math.random() * foods.length);
+let randomizedFoodNameList = [];
 let correctAnswerCount = 0;
 let currentTime = 45;
 
-// shuffle the array with help from https://www.youtube.com/watch?v=5sNGqsMpW1E
-// only access the first 8 items of the foods array
-let randomizedFoods = foods.sort(() => 0.5 - Math.random()).slice(0, 8);
+function startNextRound() {
 
-// take each name of randomized array and push it into a new array
-for (let randomizedFood of randomizedFoods) {
-    randomizedFoodNames.push(randomizedFood.name)
-}
+    let randomIndex = Math.floor(Math.random() * foods.length);
 
-// select word based on foods array and randomIndex
-questionWord.textContent = foods[randomIndex].name;
-
-// check if questionWord is in the randomizedFoodName
-// if not randomize the array until it is
-function checkRandomizedFoods() { 
-    if (!randomizedFoodNames.includes(questionWord.textContent)) {
-        randomizedFoods.pop();
-        randomizedFoods.push(foods[randomIndex])
-        randomizedFoods.sort(() => 0.5 - Math.random());
+    // shuffle the array with help from https://www.youtube.com/watch?v=5sNGqsMpW1E
+    // only access the first 8 items of the foods array
+    function randomizeFoodList() {
+        let foodRandomizer = foods.sort(() => 0.5 - Math.random()).slice(0, 8);
+        return foodRandomizer;
     }
-};
 
-checkRandomizedFoods();
+    let randomizedFoods = randomizeFoodList();
 
-// display cards on the board
-function displayCards() {
-    for (let i = 0; i < cards.length; i++) {
-        cards[i].innerHTML = `<img src="${randomizedFoods[i].img}" alt="${randomizedFoods[i].name}">`;
+    // take each name of randomized array and push it into a new array
+    function randomizeFoodNames() {
+        for (let randomizedFood of randomizedFoods) {
+            randomizedFoodNameList.push(randomizedFood.name)
+        } return randomizedFoodNameList
+    };
+
+    let randomizedFoodNames = randomizeFoodNames();
+
+    // select word based on foods array and randomIndex
+    function randomizeQuestion() {
+        questionWord.textContent = foods[randomIndex].name;
     }
-};
 
-displayCards();
+    randomizeQuestion();
 
-// evaluate if clicked image matches the correct answer
-for (let card of cards) {
-    card.firstChild.addEventListener('click', (e) => {
-        if (e.target.alt === questionWord.innerText) {
-            card.classList.add('answer-right');
-            correctAnswerCount++;
-            correctAnswers.innerHTML = `${correctAnswerCount}`;
-        } else {
-            card.classList.add('answer-wrong');
+    // check if questionWord is in the randomizedFoodName
+    // if not randomize the array until it is
+    function checkRandomizedFoods() {
+        if (!randomizedFoodNames.includes(questionWord.textContent)) {
+            randomizedFoods.pop();
+            randomizedFoods.push(foods[randomIndex])
+            randomizedFoods.sort(() => 0.5 - Math.random());
         }
-    })
+    };
+
+    checkRandomizedFoods();
+
+    // display cards on the board
+    function displayCards() {
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].innerHTML = `<img src="${randomizedFoods[i].img}" alt="${randomizedFoods[i].name}">`;
+        }
+    };
+
+    displayCards();
+
+    // evaluate if clicked image matches the correct answer
+    function selectCard() {
+        for (let card of cards) {
+            card.firstChild.addEventListener('click', (e) => {
+                if (e.target.alt === questionWord.innerText) {
+                    card.classList.add('answer-right');
+                    correctAnswerCount++;
+                    correctAnswers.innerHTML = `${correctAnswerCount}`;
+                } else {
+                    card.classList.add('answer-wrong');
+                }
+                startNextRound();
+            });
+        };
+    };
+
+    selectCard();
 };
+
+startNextRound();
 
 // set up timer with help from https://www.youtube.com/watch?v=GhePFBkdNYk
 let runTimer = setInterval(countDown, 1000);
