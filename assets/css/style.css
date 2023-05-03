@@ -51,6 +51,23 @@ h3 {
     cursor: pointer;
 }
 
+.btn-secondary {
+    width: fit-content;
+    color: #CF01A2;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #CF01A2;
+    border-radius: 8px;
+    padding: 24px 32px;
+}
+
+.btn-secondary:hover {
+    background-color: #ffeafa;
+    cursor: pointer;
+}
+
 .highscore-display {
     margin-top: 100px;
     text-align: center;
@@ -144,4 +161,46 @@ span {
 
 .answer-wrong:hover {
     border-color: #DF4706;
+}
+
+.modal-container {
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+}
+
+.hide-modal {
+    display: none;
+}
+
+.modal-content {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    padding: 48px;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+}
+
+.display-answers {
+    font-size: 32px;
+    line-height: 140%;
+    font-weight: 700;
+    text-align: center;
+}
+
+.actions {
+    display: flex;
+    gap: 16px;
 }

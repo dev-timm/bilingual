@@ -194,6 +194,8 @@ const cards = document.querySelectorAll('.card');
 const questionWord = document.querySelector('.word');
 const correctAnswers = document.querySelector('.correct-answers')
 const timer = document.querySelector('.timer');
+const hideModal = document.querySelector('.hide-modal')
+const displayAnswerScore = document.querySelector('.display-answers span');
 
 let correctAnswerCount = 0;
 let currentTime = 45;
@@ -284,6 +286,8 @@ function countDown() {
 
     if (currentTime === 0) {
         clearInterval(runTimer);
-        alert('Game Over!');
+        document.body.innerHTML;
+        hideModal.classList.remove('hide-modal')
+        displayAnswerScore.innerHTML = `${correctAnswerCount}`;
     }
 };
