@@ -29,7 +29,7 @@ const foods = [
     {
         id: 3,
         name: 'broccoli',
-        img: 'assets/images/card-brokoli.png',
+        img: 'assets/images/card-broccoli.png',
         translation: {
             en: 'broccoli',
             de: 'Brokkoli'
@@ -106,7 +106,88 @@ const foods = [
             en: 'tomato',
             de: 'Tomate'
         }
-    }
+    },
+    {
+        id: 12,
+        name: 'brussels sprouts',
+        img: 'assets/images/card-brussels-sprout.png',
+        translation: {
+            en: 'brussels sprouts',
+            de: 'Rosenkohl'
+        }
+    },
+    {
+        id: 13,
+        name: 'corn',
+        img: 'assets/images/card-corn.png',
+        translation: {
+            en: 'corn',
+            de: 'Mais'
+        }
+    },
+    {
+        id: 14,
+        name: 'eggplant',
+        img: 'assets/images/card-eggplant.png',
+        translation: {
+            en: 'eggplant',
+            de: 'Aubergine'
+        }
+    },
+    {
+        id: 15,
+        name: 'lemon',
+        img: 'assets/images/card-lemon.png',
+        translation: {
+            en: 'lemon',
+            de: 'Zitrone'
+        }
+    },
+    {
+        id: 16,
+        name: 'lime',
+        img: 'assets/images/card-lime.png',
+        translation: {
+            en: 'lime',
+            de: 'Limette'
+        }
+    },
+    {
+        id: 17,
+        name: 'papaya',
+        img: 'assets/images/card-papaya.png',
+        translation: {
+            en: 'papaya',
+            de: 'Papaya'
+        }
+    },
+    {
+        id: 18,
+        name: 'peach',
+        img: 'assets/images/card-peach.png',
+        translation: {
+            en: 'peach',
+            de: 'Pfirsich'
+        }
+    },
+    {
+        id: 19,
+        name: 'pineapple',
+        img: 'assets/images/card-pineapple.png',
+        translation: {
+            en: 'pineapple',
+            de: 'Ananas'
+        }
+    },
+    {
+        id: 20,
+        name: 'potato',
+        img: 'assets/images/card-potato.png',
+        translation: {
+            en: 'potato',
+            de: 'Kartoffel'
+        }
+    },
 ];
 
 const cards = document.querySelectorAll('.card');
@@ -168,26 +249,26 @@ function startNextRound() {
 
     displayCards();
 
-// evaluate if clicked image matches the correct answer
-function selectCard() {
-    for (let card of cards) {
-        card.firstChild.addEventListener('click', function checkAnswer(e) {
-            if (e.target.alt === questionWord.innerText) {
-                card.classList.add('answer-right');
-                correctAnswerCount++;
-                correctAnswers.innerHTML = `${correctAnswerCount}`;
-            } else {
-                card.classList.add('answer-wrong');
-            }
-            card.firstChild.removeEventListener('click', checkAnswer);
-            setTimeout(() => {
-                startNextRound();
-                card.classList.remove('answer-right');
-                card.classList.remove('answer-wrong')
-            }, 1000);
-        });
+    // evaluate if clicked image matches the correct answer
+    function selectCard() {
+        for (let card of cards) {
+            card.firstChild.addEventListener('click', function checkAnswer(e) {
+                if (e.target.alt === questionWord.innerText) {
+                    card.classList.add('answer-right');
+                    correctAnswerCount++;
+                    correctAnswers.innerHTML = `${correctAnswerCount}`;
+                } else {
+                    card.classList.add('answer-wrong');
+                }
+                card.firstChild.removeEventListener('click', checkAnswer);
+                setTimeout(() => {
+                    startNextRound();
+                    card.classList.remove('answer-right');
+                    card.classList.remove('answer-wrong')
+                }, 1000);
+            });
+        };
     };
-};
 
     selectCard();
 };
