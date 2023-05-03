@@ -114,7 +114,6 @@ const questionWord = document.querySelector('.word');
 const correctAnswers = document.querySelector('.correct-answers')
 const timer = document.querySelector('.timer');
 
-let randomizedFoodNameList = [];
 let correctAnswerCount = 0;
 let currentTime = 45;
 
@@ -132,6 +131,7 @@ function startNextRound() {
     let randomizedFoods = randomizeFoodList();
 
     // take each name of randomized array and push it into a new array
+    let randomizedFoodNameList = [];
     function randomizeFoodNames() {
         for (let randomizedFood of randomizedFoods) {
             randomizedFoodNameList.push(randomizedFood.name)
