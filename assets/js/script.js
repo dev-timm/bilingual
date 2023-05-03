@@ -215,7 +215,7 @@ function startNextRound() {
     let randomizedFoodNameList = [];
     function randomizeFoodNames() {
         for (let randomizedFood of randomizedFoods) {
-            randomizedFoodNameList.push(randomizedFood.name)
+            randomizedFoodNameList.push(randomizedFood.translation.de)
         } return randomizedFoodNameList
     };
 
@@ -223,7 +223,7 @@ function startNextRound() {
 
     // select word based on foods array and randomIndex
     function randomizeQuestion() {
-        questionWord.textContent = foods[randomIndex].name;
+        questionWord.textContent = foods[randomIndex].translation.de;
     }
 
     randomizeQuestion();
@@ -243,7 +243,7 @@ function startNextRound() {
     // display cards on the board
     function displayCards() {
         for (let i = 0; i < cards.length; i++) {
-            cards[i].innerHTML = `<img src="${randomizedFoods[i].img}" alt="${randomizedFoods[i].name}">`;
+            cards[i].innerHTML = `<img src="${randomizedFoods[i].img}" alt="${randomizedFoods[i].translation.de}">`;
         }
     };
 
