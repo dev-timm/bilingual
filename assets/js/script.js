@@ -261,12 +261,22 @@ function startNextRound() {
                     correctAnswers.innerHTML = `${correctAnswerCount}`;
                 } else {
                     card.classList.add('answer-wrong');
-                }
+                    for (let card of cards) {
+                        if (card.firstChild.alt === questionWord.innerText) {
+                            card.classList.add('answer-right');
+                            setTimeout(() => {
+                                startNextRound();
+                                card.classList.remove('answer-right');
+                            }, 1000);
+                            
+                        };
+                    };
+                };
                 card.firstChild.removeEventListener('click', checkAnswer);
                 setTimeout(() => {
                     startNextRound();
                     card.classList.remove('answer-right');
-                    card.classList.remove('answer-wrong')
+                    card.classList.remove('answer-wrong');
                 }, 1000);
             });
         };
