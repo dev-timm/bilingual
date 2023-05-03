@@ -168,21 +168,26 @@ function startNextRound() {
 
     displayCards();
 
-    // evaluate if clicked image matches the correct answer
-    function selectCard() {
-        for (let card of cards) {
-            card.firstChild.addEventListener('click', (e) => {
-                if (e.target.alt === questionWord.innerText) {
-                    card.classList.add('answer-right');
-                    correctAnswerCount++;
-                    correctAnswers.innerHTML = `${correctAnswerCount}`;
-                } else {
-                    card.classList.add('answer-wrong');
-                }
+// evaluate if clicked image matches the correct answer
+function selectCard() {
+    for (let card of cards) {
+        card.firstChild.addEventListener('click', function checkAnswer(e) {
+            if (e.target.alt === questionWord.innerText) {
+                card.classList.add('answer-right');
+                correctAnswerCount++;
+                correctAnswers.innerHTML = `${correctAnswerCount}`;
+            } else {
+                card.classList.add('answer-wrong');
+            }
+            card.firstChild.removeEventListener('click', checkAnswer);
+            setTimeout(() => {
                 startNextRound();
-            });
-        };
+                card.classList.remove('answer-right');
+                card.classList.remove('answer-wrong')
+            }, 1000);
+        });
     };
+};
 
     selectCard();
 };
