@@ -1,6 +1,5 @@
 const foods = [
     {
-        id: 0,
         name: 'apple',
         img: 'assets/images/card-apple.png',
         translation: {
@@ -9,7 +8,6 @@ const foods = [
         }
     },
     {
-        id: 1,
         name: 'avocado',
         img: 'assets/images/card-avocado.png',
         translation: {
@@ -18,7 +16,6 @@ const foods = [
         }
     },
     {
-        id: 2,
         name: 'banana',
         img: 'assets/images/card-banana.png',
         translation: {
@@ -27,7 +24,6 @@ const foods = [
         }
     },
     {
-        id: 3,
         name: 'broccoli',
         img: 'assets/images/card-broccoli.png',
         translation: {
@@ -36,7 +32,6 @@ const foods = [
         }
     },
     {
-        id: 4,
         name: 'cauliflower',
         img: 'assets/images/card-cauliflower.png',
         translation: {
@@ -45,7 +40,6 @@ const foods = [
         }
     },
     {
-        id: 5,
         name: 'cherry',
         img: 'assets/images/card-cherry.png',
         translation: {
@@ -54,7 +48,6 @@ const foods = [
         }
     },
     {
-        id: 6,
         name: 'chilli',
         img: 'assets/images/card-chilli.png',
         translation: {
@@ -63,7 +56,6 @@ const foods = [
         }
     },
     {
-        id: 7,
         name: 'coconut',
         img: 'assets/images/card-coconut.png',
         translation: {
@@ -72,7 +64,6 @@ const foods = [
         }
     },
     {
-        id: 8,
         name: 'pepper',
         img: 'assets/images/card-pepper.png',
         translation: {
@@ -81,7 +72,6 @@ const foods = [
         }
     },
     {
-        id: 9,
         name: 'strawberry',
         img: 'assets/images/card-strawberry.png',
         translation: {
@@ -90,7 +80,6 @@ const foods = [
         }
     },
     {
-        id: 10,
         name: 'tangerine',
         img: 'assets/images/card-tangerine.png',
         translation: {
@@ -99,7 +88,6 @@ const foods = [
         }
     },
     {
-        id: 11,
         name: 'tomato',
         img: 'assets/images/card-tomato.png',
         translation: {
@@ -108,7 +96,6 @@ const foods = [
         }
     },
     {
-        id: 12,
         name: 'brussels sprouts',
         img: 'assets/images/card-brussels-sprout.png',
         translation: {
@@ -117,7 +104,6 @@ const foods = [
         }
     },
     {
-        id: 13,
         name: 'corn',
         img: 'assets/images/card-corn.png',
         translation: {
@@ -126,7 +112,6 @@ const foods = [
         }
     },
     {
-        id: 14,
         name: 'eggplant',
         img: 'assets/images/card-eggplant.png',
         translation: {
@@ -135,7 +120,6 @@ const foods = [
         }
     },
     {
-        id: 15,
         name: 'lemon',
         img: 'assets/images/card-lemon.png',
         translation: {
@@ -144,7 +128,6 @@ const foods = [
         }
     },
     {
-        id: 16,
         name: 'lime',
         img: 'assets/images/card-lime.png',
         translation: {
@@ -153,7 +136,6 @@ const foods = [
         }
     },
     {
-        id: 17,
         name: 'papaya',
         img: 'assets/images/card-papaya.png',
         translation: {
@@ -162,7 +144,6 @@ const foods = [
         }
     },
     {
-        id: 18,
         name: 'peach',
         img: 'assets/images/card-peach.png',
         translation: {
@@ -171,7 +152,6 @@ const foods = [
         }
     },
     {
-        id: 19,
         name: 'pineapple',
         img: 'assets/images/card-pineapple.png',
         translation: {
@@ -180,7 +160,6 @@ const foods = [
         }
     },
     {
-        id: 20,
         name: 'potato',
         img: 'assets/images/card-potato.png',
         translation: {
@@ -265,10 +244,8 @@ function startNextRound() {
                         if (card.firstChild.alt === questionWord.innerText) {
                             card.classList.add('answer-right');
                             setTimeout(() => {
-                                startNextRound();
                                 card.classList.remove('answer-right');
                             }, 1000);
-                            
                         };
                     };
                 };
@@ -297,7 +274,7 @@ function countDown() {
     if (currentTime === 0) {
         clearInterval(runTimer);
         document.body.innerHTML;
-        hideModal.classList.remove('hide-modal')
+        hideModal.classList.remove('hide-modal');
         displayAnswerScore.innerHTML = `${correctAnswerCount}`;
     }
 };
