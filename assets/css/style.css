@@ -240,7 +240,7 @@ span {
     }
     
     .container {
-        width: 100vw;
+        width: 90vw;
     }
 
     .intro {
@@ -255,19 +255,33 @@ span {
     .navbar {
         padding: 24px;
     }
-    
+
     .main {
         margin-top: 50px;
     }
 
     .card {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
+        margin: 4px;
+    }
+
+    .card:hover {
+        border-color: #fff;
+        cursor: pointer;
+    }
+
+    .answer-right:hover {
+        border-color: #00BB8E;
+    }
+
+    .answer-wrong:hover {
+        border-color: #DF4706;
     }
 
     .card img {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
     }
 
     .highscore-display {
