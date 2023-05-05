@@ -179,87 +179,88 @@ const displayAnswerScore = document.querySelector('.display-answers span');
 let correctAnswerCount = 0;
 let currentTime = 45;
 
-function startNextRound() {
+function getRandomIndex(itemList) {
+    return Math.floor(Math.random() * itemList.length);
+};
 
-    let randomIndex = Math.floor(Math.random() * foods.length);
+// shuffle the array with help from https://www.youtube.com/watch?v=5sNGqsMpW1E
+// only access the first 8 items of the array
+function randomizeAndReduceList(itemList) {
+    return itemList.sort(() => 0.5 - Math.random()).slice(0, 8);
+};
 
-    // shuffle the array with help from https://www.youtube.com/watch?v=5sNGqsMpW1E
-    // only access the first 8 items of the foods array
-    function randomizeFoodList() {
-        let foodRandomizer = foods.sort(() => 0.5 - Math.random()).slice(0, 8);
-        return foodRandomizer;
+// take each name of randomized array and push it into a new array
+let translationListOfItems;
+function getTranslationListOfItems(itemList) {
+    for (let item of itemList) {
+        translationListOfItems.push(item.translation.de)
+    } return translationListOfItems
+};
+
+// select word based on foods array and randomIndex
+function randomizeQuestion(itemList, index) {
+    questionWord.textContent = itemList[index].translation.de;
+};
+
+// check if questionWord is in the randomizedFoodName
+// if not randomize the array until it is
+function checkRandomizedItems(itemList, correctedItemList, index) {
+    if (!itemList.includes(questionWord.textContent)) {
+        correctedItemList.pop();
+        correctedItemList.push(foods[index])
+        correctedItemList.sort(() => 0.5 - Math.random());
     }
+};
 
-    let randomizedFoods = randomizeFoodList();
-
-    // take each name of randomized array and push it into a new array
-    let randomizedFoodNameList = [];
-    function randomizeFoodNames() {
-        for (let randomizedFood of randomizedFoods) {
-            randomizedFoodNameList.push(randomizedFood.translation.de)
-        } return randomizedFoodNameList
-    };
-
-    let randomizedFoodNames = randomizeFoodNames();
-
-    // select word based on foods array and randomIndex
-    function randomizeQuestion() {
-        questionWord.textContent = foods[randomIndex].translation.de;
+// display cards on the board
+function displayCards(itemList) {
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].innerHTML = `<img src="${itemList[i].img}" alt="${itemList[i].translation.de}">`;
     }
+};
 
-    randomizeQuestion();
-
-    // check if questionWord is in the randomizedFoodName
-    // if not randomize the array until it is
-    function checkRandomizedFoods() {
-        if (!randomizedFoodNames.includes(questionWord.textContent)) {
-            randomizedFoods.pop();
-            randomizedFoods.push(foods[randomIndex])
-            randomizedFoods.sort(() => 0.5 - Math.random());
-        }
-    };
-
-    checkRandomizedFoods();
-
-    // display cards on the board
-    function displayCards() {
-        for (let i = 0; i < cards.length; i++) {
-            cards[i].innerHTML = `<img src="${randomizedFoods[i].img}" alt="${randomizedFoods[i].translation.de}">`;
-        }
-    };
-
-    displayCards();
-
-    // evaluate if clicked image matches the correct answer
-    function selectCard() {
-        for (let card of cards) {
-            card.firstChild.addEventListener('click', function checkAnswer(e) {
-                if (e.target.alt === questionWord.innerText) {
-                    card.classList.add('answer-right');
-                    correctAnswerCount++;
-                    correctAnswers.innerHTML = `${correctAnswerCount}`;
-                } else {
-                    card.classList.add('answer-wrong');
-                    for (let card of cards) {
-                        if (card.firstChild.alt === questionWord.innerText) {
-                            card.classList.add('answer-right');
-                            setTimeout(() => {
-                                card.classList.remove('answer-right');
-                            }, 1000);
-                        };
+// evaluate if clicked image matches the correct answer
+function selectCardAndValidateAnswer() {
+    for (let card of cards) {
+        card.firstChild.addEventListener('click', function checkAnswer(e) {
+            if (e.target.alt === questionWord.innerText) {
+                card.classList.add('answer-right');
+                correctAnswerCount++;
+                correctAnswers.innerHTML = `${correctAnswerCount}`;
+            } else {
+                card.classList.add('answer-wrong');
+                for (let card of cards) {
+                    if (card.firstChild.alt === questionWord.innerText) {
+                        card.classList.add('answer-right');
+                        setTimeout(() => {
+                            card.classList.remove('answer-right');
+                        }, 1000);
                     };
                 };
-                card.firstChild.removeEventListener('click', checkAnswer);
-                setTimeout(() => {
-                    startNextRound();
-                    card.classList.remove('answer-right');
-                    card.classList.remove('answer-wrong');
-                }, 1000);
-            });
-        };
+            };
+            card.firstChild.removeEventListener('click', checkAnswer);
+            setTimeout(() => {
+                startNextRound();
+                card.classList.remove('answer-right');
+                card.classList.remove('answer-wrong');
+            }, 1000);
+        });
     };
+};
 
-    selectCard();
+function startNextRound() {
+    const randomIndex = getRandomIndex(foods);
+    const randomizedAndReducedList = randomizeAndReduceList(foods);
+
+    translationListOfItems = [];
+    const randomizedTranslatedListOfItems = getTranslationListOfItems(randomizedAndReducedList);
+
+    randomizeQuestion(foods, randomIndex);
+    checkRandomizedItems(randomizedTranslatedListOfItems, randomizedAndReducedList, randomIndex);
+
+    displayCards(randomizedAndReducedList);
+
+    selectCardAndValidateAnswer();
 };
 
 startNextRound();
