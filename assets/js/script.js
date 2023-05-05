@@ -1,7 +1,7 @@
 const foods = [
     {
         name: 'apple',
-        img: 'assets/images/card-apple.png',
+        img: 'assets/images/foods/card-apple.png',
         translation: {
             en: 'apple',
             de: 'Apfel'
@@ -9,7 +9,7 @@ const foods = [
     },
     {
         name: 'avocado',
-        img: 'assets/images/card-avocado.png',
+        img: 'assets/images/foods/card-avocado.png',
         translation: {
             en: 'avocado',
             de: 'Avocado'
@@ -17,7 +17,7 @@ const foods = [
     },
     {
         name: 'banana',
-        img: 'assets/images/card-banana.png',
+        img: 'assets/images/foods/card-banana.png',
         translation: {
             en: 'banana',
             de: 'Banane'
@@ -25,7 +25,7 @@ const foods = [
     },
     {
         name: 'broccoli',
-        img: 'assets/images/card-broccoli.png',
+        img: 'assets/images/foods/card-broccoli.png',
         translation: {
             en: 'broccoli',
             de: 'Brokkoli'
@@ -33,7 +33,7 @@ const foods = [
     },
     {
         name: 'cauliflower',
-        img: 'assets/images/card-cauliflower.png',
+        img: 'assets/images/foods/card-cauliflower.png',
         translation: {
             en: 'cauliflower',
             de: 'Blumenkohl'
@@ -41,7 +41,7 @@ const foods = [
     },
     {
         name: 'cherry',
-        img: 'assets/images/card-cherry.png',
+        img: 'assets/images/foods/card-cherry.png',
         translation: {
             en: 'cherry',
             de: 'Kirsche'
@@ -49,7 +49,7 @@ const foods = [
     },
     {
         name: 'chilli',
-        img: 'assets/images/card-chilli.png',
+        img: 'assets/images/foods/card-chilli.png',
         translation: {
             en: 'chilli',
             de: 'Chilli'
@@ -57,7 +57,7 @@ const foods = [
     },
     {
         name: 'coconut',
-        img: 'assets/images/card-coconut.png',
+        img: 'assets/images/foods/card-coconut.png',
         translation: {
             en: 'coconut',
             de: 'Kokosnuss'
@@ -65,7 +65,7 @@ const foods = [
     },
     {
         name: 'pepper',
-        img: 'assets/images/card-pepper.png',
+        img: 'assets/images/foods/card-pepper.png',
         translation: {
             en: 'pepper',
             de: 'Paprika'
@@ -73,7 +73,7 @@ const foods = [
     },
     {
         name: 'strawberry',
-        img: 'assets/images/card-strawberry.png',
+        img: 'assets/images/foods/card-strawberry.png',
         translation: {
             en: 'strawberry',
             de: 'Erdbeere'
@@ -81,15 +81,15 @@ const foods = [
     },
     {
         name: 'tangerine',
-        img: 'assets/images/card-tangerine.png',
+        img: 'assets/images/foods/card-tangerine.png',
         translation: {
             en: 'tangerine',
-            de: 'Orange'
+            de: 'Mandarine'
         }
     },
     {
         name: 'tomato',
-        img: 'assets/images/card-tomato.png',
+        img: 'assets/images/foods/card-tomato.png',
         translation: {
             en: 'tomato',
             de: 'Tomate'
@@ -97,7 +97,7 @@ const foods = [
     },
     {
         name: 'brussels sprouts',
-        img: 'assets/images/card-brussels-sprout.png',
+        img: 'assets/images/foods/card-brussels-sprout.png',
         translation: {
             en: 'brussels sprouts',
             de: 'Rosenkohl'
@@ -105,7 +105,7 @@ const foods = [
     },
     {
         name: 'corn',
-        img: 'assets/images/card-corn.png',
+        img: 'assets/images/foods/card-corn.png',
         translation: {
             en: 'corn',
             de: 'Mais'
@@ -113,7 +113,7 @@ const foods = [
     },
     {
         name: 'eggplant',
-        img: 'assets/images/card-eggplant.png',
+        img: 'assets/images/foods/card-eggplant.png',
         translation: {
             en: 'eggplant',
             de: 'Aubergine'
@@ -121,7 +121,7 @@ const foods = [
     },
     {
         name: 'lemon',
-        img: 'assets/images/card-lemon.png',
+        img: 'assets/images/foods/card-lemon.png',
         translation: {
             en: 'lemon',
             de: 'Zitrone'
@@ -129,7 +129,7 @@ const foods = [
     },
     {
         name: 'lime',
-        img: 'assets/images/card-lime.png',
+        img: 'assets/images/foods/card-lime.png',
         translation: {
             en: 'lime',
             de: 'Limette'
@@ -137,7 +137,7 @@ const foods = [
     },
     {
         name: 'papaya',
-        img: 'assets/images/card-papaya.png',
+        img: 'assets/images/foods/card-papaya.png',
         translation: {
             en: 'papaya',
             de: 'Papaya'
@@ -145,7 +145,7 @@ const foods = [
     },
     {
         name: 'peach',
-        img: 'assets/images/card-peach.png',
+        img: 'assets/images/foods/card-peach.png',
         translation: {
             en: 'peach',
             de: 'Pfirsich'
@@ -153,7 +153,7 @@ const foods = [
     },
     {
         name: 'pineapple',
-        img: 'assets/images/card-pineapple.png',
+        img: 'assets/images/foods/card-pineapple.png',
         translation: {
             en: 'pineapple',
             de: 'Ananas'
@@ -161,7 +161,7 @@ const foods = [
     },
     {
         name: 'potato',
-        img: 'assets/images/card-potato.png',
+        img: 'assets/images/foods/card-potato.png',
         translation: {
             en: 'potato',
             de: 'Kartoffel'
