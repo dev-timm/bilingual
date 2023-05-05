@@ -169,6 +169,177 @@ const foods = [
     },
 ];
 
+const animals = [
+    {
+        name: 'bear',
+        img: 'assets/images/animals/card-bear.png',
+        translation: {
+            en: 'bear',
+            de: 'Bär'
+        }
+    },
+    {
+        name: 'butterfly',
+        img: 'assets/images/animals/card-butterfly.png',
+        translation: {
+            en: 'butterfly',
+            de: 'Schmetterling'
+        }
+    },
+    {
+        name: 'cat',
+        img: 'assets/images/animals/card-cat.png',
+        translation: {
+            en: 'cat',
+            de: 'Katze'
+        }
+    },
+    {
+        name: 'cow',
+        img: 'assets/images/animals/card-cow.png',
+        translation: {
+            en: 'cow',
+            de: 'Kuh'
+        }
+    },
+    {
+        name: 'deer',
+        img: 'assets/images/animals/card-deer.png',
+        translation: {
+            en: 'deer',
+            de: 'Hirsch'
+        }
+    },
+    {
+        name: 'eagle',
+        img: 'assets/images/animals/card-eagle.png',
+        translation: {
+            en: 'eagle',
+            de: 'Adler'
+        }
+    },
+    {
+        name: 'elephant',
+        img: 'assets/images/animals/card-elephant.png',
+        translation: {
+            en: 'elephant',
+            de: 'Elefant'
+        }
+    },
+    {
+        name: 'fish',
+        img: 'assets/images/animals/card-fish.png',
+        translation: {
+            en: 'fish',
+            de: 'Fisch'
+        }
+    },
+    {
+        name: 'fox',
+        img: 'assets/images/animals/card-fox.png',
+        translation: {
+            en: 'fox',
+            de: 'Fuchs'
+        }
+    },
+    {
+        name: 'frog',
+        img: 'assets/images/animals/card-frog.png',
+        translation: {
+            en: 'frog',
+            de: 'Frosch'
+        }
+    },
+    {
+        name: 'lamb',
+        img: 'assets/images/animals/card-lamb.png',
+        translation: {
+            en: 'lamb',
+            de: 'Lamm'
+        }
+    },
+    {
+        name: 'parrot',
+        img: 'assets/images/animals/card-parrot.png',
+        translation: {
+            en: 'parrot',
+            de: 'Papagei'
+        }
+    },
+    {
+        name: 'penguin',
+        img: 'assets/images/animals/card-penguin.png',
+        translation: {
+            en: 'penguin',
+            de: 'Pinguin'
+        }
+    },
+    {
+        name: 'rabbit',
+        img: 'assets/images/animals/card-rabbit.png',
+        translation: {
+            en: 'rabbit',
+            de: 'Kaninchen'
+        }
+    },
+    {
+        name: 'rhinoceros',
+        img: 'assets/images/animals/card-rhinoceros.png',
+        translation: {
+            en: 'rhinoceros',
+            de: 'Nashorn'
+        }
+    },
+    {
+        name: 'shark',
+        img: 'assets/images/animals/card-shark.png',
+        translation: {
+            en: 'shark',
+            de: 'Hai'
+        }
+    },
+    {
+        name: 'squirell',
+        img: 'assets/images/animals/card-squirell.png',
+        translation: {
+            en: 'squirell',
+            de: 'Eichhörnchen'
+        }
+    },
+    {
+        name: 'swan',
+        img: 'assets/images/animals/card-swan.png',
+        translation: {
+            en: 'swan',
+            de: 'Schwan'
+        }
+    },
+    {
+        name: 'tiger',
+        img: 'assets/images/animals/card-tiger.png',
+        translation: {
+            en: 'tiger',
+            de: 'Tiger'
+        }
+    },
+    {
+        name: 'turtle',
+        img: 'assets/images/animals/card-turtle.png',
+        translation: {
+            en: 'turtle',
+            de: 'Schildkröte'
+        }
+    },
+    {
+        name: 'wolf',
+        img: 'assets/images/animals/card-wolf.png',
+        translation: {
+            en: 'wolf',
+            de: 'Wolf'
+        }
+    },
+];
+
 const cards = document.querySelectorAll('.card');
 const questionWord = document.querySelector('.word');
 const correctAnswers = document.querySelector('.correct-answers')
