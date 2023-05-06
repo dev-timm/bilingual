@@ -344,11 +344,35 @@ const cards = document.querySelectorAll('.card');
 const questionWord = document.querySelector('.word');
 const correctAnswers = document.querySelector('.correct-answers')
 const timer = document.querySelector('.timer');
+const modal = document.querySelector('.modal-container');
 const hideModal = document.querySelector('.hide-modal')
 const displayAnswerScore = document.querySelector('.display-answers span');
+const startGameButton = document.querySelector('.start-game');
 
 let correctAnswerCount = 0;
 let currentTime = 45;
+
+function setGameSettings() {
+    startGameButton.addEventListener('click', () => {
+        modal.classList.add('hide-modal');
+
+        // set up timer with help from https://www.youtube.com/watch?v=GhePFBkdNYk
+        let runTimer = setInterval(countDown, 1000);
+        function countDown() {
+            currentTime--
+            timer.innerText = currentTime;
+
+            if (currentTime === 0) {
+                clearInterval(runTimer);
+                document.body.innerHTML;
+                hideModal.classList.remove('hide-modal');
+                displayAnswerScore.innerHTML = `${correctAnswerCount}`;
+            }
+        };
+    });
+};
+
+setGameSettings();
 
 function getRandomIndex(itemList) {
     return Math.floor(Math.random() * itemList.length);
@@ -436,17 +460,3 @@ function startNextRound() {
 
 startNextRound();
 
-// set up timer with help from https://www.youtube.com/watch?v=GhePFBkdNYk
-let runTimer = setInterval(countDown, 1000);
-
-function countDown() {
-    currentTime--
-    timer.innerText = currentTime;
-
-    if (currentTime === 0) {
-        clearInterval(runTimer);
-        document.body.innerHTML;
-        hideModal.classList.remove('hide-modal');
-        displayAnswerScore.innerHTML = `${correctAnswerCount}`;
-    }
-};

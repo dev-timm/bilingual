@@ -39,18 +39,38 @@
             <p><span class="correct-answers">0</span>Correct Answers</p>
         </section>
     </main>
-    <!-- modal starts -->
+    <!-- SETTINGS MODAL START -->
+    <div class="modal-container">
+        <div class="modal-content">
+            <h2>Game Settings</h2>
+            <p>Choose between three different type of cards</p>
+                <div class="game-selection">
+                    <input type="radio" name="game-type" value="foods" id="foods" class="game-type" checked>
+                    <label for="foods" class="game-label">Foods</label>
+                    <input type="radio" name="game-type" value="animals" id="animals" class="game-type">
+                    <label for="animals" class="game-label">Animals</label>
+                    <input type="radio" name="game-type" value="foods-and-animals" id="foods-and-animals" class="game-type">
+                    <label for="foods-and-animals" class="game-label">Foods & Animals</label>
+                </div>
+                <div class="actions">
+                    <a href="index.html" class="btn-secondary-md">Go Back</a>
+                    <button class="btn-primary-md start-game">Start Game</button>
+                </div>
+        </div>
+    </div>
+    <!-- SETTINGS MODAL END -->
+    <!-- GAME OVER MODAL START -->
     <div class="modal-container hide-modal">
         <div class="modal-content">
             <h2>Game Over</h2>
             <p class="display-answers">Your final score is: <br><span>8</span></p>
             <div class="actions">
-                <a href="index.html" class="btn-secondary-md">Close</a>
+                <a href="index.html" class="btn-secondary-md">Go Back</a>
                 <a href="game.html" class="btn-primary-md">Play Again</a>
             </div>
         </div>
     </div>
-    <!-- modal ends -->
+    <!-- GAME OVER MODAL END -->
     <script src="assets/js/script.js"></script>
 </body>
 </html>
