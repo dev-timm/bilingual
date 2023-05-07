@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 const foods = [
     {
         name: 'apple',
@@ -344,10 +346,10 @@ const all = foods.concat(animals);
 
 const cards = document.querySelectorAll('.card');
 const questionWord = document.querySelector('.word');
-const correctAnswers = document.querySelector('.correct-answers')
+const correctAnswers = document.querySelector('.correct-answers');
 const timer = document.querySelector('.timer');
 const modal = document.querySelector('.modal-container');
-const hideModal = document.querySelector('.hide-modal')
+const hideModal = document.querySelector('.hide-modal');
 const displayAnswerScore = document.querySelector('.display-answers span');
 const categories = document.querySelectorAll('.start-game');
 
@@ -360,43 +362,43 @@ let highscoreCount = {value: highscore};
 
 function getRandomIndex(itemList) {
     return Math.floor(Math.random() * itemList.length);
-};
+}
 
 // shuffle the array with help from https://www.youtube.com/watch?v=5sNGqsMpW1E
 // only access the first 8 items of the array
 function randomizeAndReduceList(itemList) {
     return itemList.sort(() => 0.5 - Math.random()).slice(0, 8);
-};
+}
 
 // take each name of randomized array and push it into a new array
 let translationListOfItems;
 function getTranslationListOfItems(itemList) {
     for (let item of itemList) {
-        translationListOfItems.push(item.translation.de)
-    } return translationListOfItems
-};
+        translationListOfItems.push(item.translation.de);
+    } return translationListOfItems;
+}
 
 // select word based on foods array and randomIndex
 function randomizeQuestion(itemList, index) {
     questionWord.textContent = itemList[index].translation.de;
-};
+}
 
 // check if questionWord is in the randomizedFoodName
 // if not randomize the array until it is
 function checkRandomizedItems(itemList, correctedItemList, index) {
     if (!itemList.includes(questionWord.textContent)) {
         correctedItemList.pop();
-        correctedItemList.push(usersChoice[index])
+        correctedItemList.push(usersChoice[index]);
         correctedItemList.sort(() => 0.5 - Math.random());
     }
-};
+}
 
 // display cards on the board
 function displayCards(itemList) {
     for (let i = 0; i < cards.length; i++) {
         cards[i].innerHTML = `<img src="${itemList[i].img}" alt="${itemList[i].translation.de}">`;
     }
-};
+}
 
 // evaluate if clicked image matches the correct answer
 function selectCardAndValidateAnswer() {
@@ -414,9 +416,9 @@ function selectCardAndValidateAnswer() {
                         setTimeout(() => {
                             card.classList.remove('answer-right');
                         }, 1000);
-                    };
-                };
-            };
+                    }
+                }
+            }
             card.firstChild.removeEventListener('click', checkAnswer);
             setTimeout(() => {
                 startNextRound();
@@ -424,8 +426,8 @@ function selectCardAndValidateAnswer() {
                 card.classList.remove('answer-wrong');
             }, 1000);
         });
-    };
-};
+    }
+}
 
 function startNextRound() {
     const randomIndex = getRandomIndex(usersChoice);
@@ -440,7 +442,7 @@ function startNextRound() {
     displayCards(randomizedAndReducedList);
 
     selectCardAndValidateAnswer();
-};
+}
 
 
 for (let category of categories) {
@@ -448,7 +450,7 @@ for (let category of categories) {
         usersChoice = eval(category.id);
         startNextRound();
         console.log(usersChoice);
-    })
+    });
 }
 
 function setGameSettings() {
@@ -460,23 +462,22 @@ function setGameSettings() {
             // set up timer with help from https://www.youtube.com/watch?v=GhePFBkdNYk
             let runTimer = setInterval(countDown, 1000);
             function countDown() {
-                currentTime--
+                currentTime--;
                 timer.innerText = currentTime;
 
                 if (currentTime === 0) {
                     clearInterval(runTimer);
-                    document.body.innerHTML;
                     hideModal.classList.remove('hide-modal');
                     displayAnswerScore.innerHTML = `${correctAnswerCount}`;
 
                     // use local storage to save highscore with help from https://www.youtube.com/watch?v=DFhmNLKwwGw
                     if (correctAnswerCount > highscore) {
                         highscoreCount.value = correctAnswerCount;
-                        localStorage.setItem('highscore', highscoreCount.value)
+                        localStorage.setItem('highscore', highscoreCount.value);
                     }
                 }
-            };
-        })
+            }
+        });
     }
 }
 
