@@ -85,7 +85,7 @@ h3 {
 }
 
 .highscore-display {
-    margin-top: 100px;
+    margin-top: 40px;
     text-align: center;
 }
 
@@ -189,6 +189,10 @@ span {
 
 .hide-modal {
     display: none;
+}
+
+.stop-scrolling {
+    overflow: hidden;
 }
 
 .modal-content {
@@ -316,10 +320,6 @@ span {
     .card img {
         width: 90px;
         height: 90px;
-    }
-
-    .highscore-display {
-        margin-top: 40px;
     }
 
     .modal-content {

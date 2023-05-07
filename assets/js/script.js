@@ -344,6 +344,7 @@ const animals = [
 
 const all = foods.concat(animals);
 
+const body = document.querySelector('body')
 const cards = document.querySelectorAll('.card');
 const questionWord = document.querySelector('.word');
 const correctAnswers = document.querySelector('.correct-answers');
@@ -454,10 +455,12 @@ for (let category of categories) {
 }
 
 function setGameSettings() {
+    body.classList.add('stop-scrolling');
     for (let category of categories) {
         category.addEventListener('click', () => {
             // remove modal and start game
             modal.classList.add('hide-modal');
+            body.classList.remove('stop-scrolling');
 
             // set up timer with help from https://www.youtube.com/watch?v=GhePFBkdNYk
             let runTimer = setInterval(countDown, 1000);
@@ -468,6 +471,7 @@ function setGameSettings() {
                 if (currentTime === 0) {
                     clearInterval(runTimer);
                     hideModal.classList.remove('hide-modal');
+                    body.classList.add('stop-scrolling');
                     displayAnswerScore.innerHTML = `${correctAnswerCount}`;
 
                     // use local storage to save highscore with help from https://www.youtube.com/watch?v=DFhmNLKwwGw
