@@ -122,7 +122,7 @@ span {
 .game-board {
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 40px;
     gap: 48px;
     align-items: center;
 }
@@ -209,6 +209,10 @@ span {
     gap: 40px;
 }
 
+.modal-content p {
+    text-align: center;
+}
+
 .display-answers {
     font-size: 32px;
     line-height: 140%;
@@ -223,7 +227,8 @@ span {
 
 .game-selection {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 16px;
 }
 
