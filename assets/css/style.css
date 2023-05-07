@@ -233,22 +233,19 @@ span {
     height: 0;
 }
 
-.game-type + label {
+.start-game {
     display: flex;
     font-weight: 700;
     width: 140px;
     justify-content: center;
     padding: 12px;
+    background-color: #fff;
     border: 2px solid #DCD3DA;
     border-radius: 4px;
     cursor:pointer;
 }
 
-.game-type:hover + label {
-    border: 2px solid #CF01A2;
-}
-
-.game-type:checked + label {
+.start-game:hover {
     color: #CF01A2;
     border: 2px solid #CF01A2;
 }
