@@ -89,7 +89,7 @@ h3 {
     text-align: center;
 }
 
-.score, .correct-answers {
+.highscore-value, .correct-answers {
     display: block;
     font-size: 24px;
     font-weight: 700;

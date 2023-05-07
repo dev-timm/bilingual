@@ -355,6 +355,9 @@ let correctAnswerCount = 0;
 let currentTime = 45;
 let usersChoice;
 
+let highscore = localStorage.getItem('highscore') || 0;
+let highscoreCount = {value: highscore};
+
 function getRandomIndex(itemList) {
     return Math.floor(Math.random() * itemList.length);
 };
@@ -465,6 +468,12 @@ function setGameSettings() {
                     document.body.innerHTML;
                     hideModal.classList.remove('hide-modal');
                     displayAnswerScore.innerHTML = `${correctAnswerCount}`;
+
+                    // use local storage to save highscore with help from https://www.youtube.com/watch?v=DFhmNLKwwGw
+                    if (correctAnswerCount > highscore) {
+                        highscoreCount.value = correctAnswerCount;
+                        localStorage.setItem('highscore', highscoreCount.value)
+                    }
                 }
             };
         })
