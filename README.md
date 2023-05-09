@@ -40,7 +40,40 @@ The font family [Inter](https://fonts.google.com/specimen/Inter?query=inter) was
 
 #### Colors
 As images are the key factor of the game, the color palette was kept simple to make sure the emphasis remains on images themselves. As a result, the rest of the UI doesn’t attract too much of the attention. Critical information, however, is highlighted with the vibrant primary color so that the user doesn’t miss any important feedback.
+
 ![An Image previewing low-fi wireframes](assets/images/readme/colors.png)
 
 #### Accessibility
 The color palette has sufficient contrast and the fonts are well readable which ensures the game is accessible even to visitors with impaired vision.
+
+## Features
+
+### Header
+The header is kept simple and only shows the logo on the top left as part of the navigation. By clicking the logo the user returns to the homepage.
+
+![An Image showing the header](assets/images/readme/header.png)
+
+### Intro
+The intro section is the first thing that awaits the visitor when landing on the homepage. The headline gives a clear indication on what the user can expect from this website. Below is a quick tutorial about how the game works and a button to start it.
+
+![An Image shwoing the intro of the homepage](assets/images/readme/intro.png)
+
+### High Score
+The high score section displays the highest amount of correct answers the user has given throughout all of the rounds they played. The information is saved via local storage, so even when the user closes their browser, the high score will show up once again when they visit the page again.
+
+![An Image shwoing the intro of the homepage](assets/images/readme/high-score.png)
+
+### Game Settings Modal
+After clicking on the “Play Game” button, users see the game settings modal which allows them to choose among three different categories. Selecting one of the categories will automatically start the game.
+
+![An Image shwoing the intro of the homepage](assets/images/readme/modal-settings.png)
+
+### Game Screen
+The game screen shows 8 random cards which include images that are based on the category users have selected. Above the card grid there is a prompt displayed that asks the user to select the corresponding card, as well as there is a timer that runs down. If a user selects the right image the card will turn green and a new random set of cards will appear.  Clicking on the wrong card will turn it orange and highlight the correct card in green before loading the next prompt. There is a counter on the bottom that shows the number of correct answers the user has given in total during the current game round.
+
+![An Image shwoing the intro of the homepage](assets/images/readme/game.png)
+
+### Game Over Modal
+The game over modal shows up as soon as the timer reaches 0. It notifies the user that the game has ended and displays the number of correctly given answers. It also gives the user the choice to start a new game or go back to the homepage.
+
+![An Image shwoing the intro of the homepage](assets/images/readme/modal-score.png)
