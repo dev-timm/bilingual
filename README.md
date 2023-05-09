@@ -22,3 +22,25 @@ As a person who...
 
 ### MVP
 For the MVP it was important to have the basic concept of the game running. During the game round, users are offered a quiz-like question where they have to select the right image card according to the German word displayed at the top. The game is structured in such a way that in the future new languages and vocabulary categories can be added easily.
+
+## Design Decisions
+
+### Design Process
+To make sure that the focus lies on the functionality, the design process of the game was first captured in low-fidelity mockups before adding visuals.
+
+![An Image previewing low-fi wireframes](assets/images/readme/low-fi-example.png)
+
+All wireframe can be found [here](https://github.com/dev-timm/bilingual/tree/main/assets/images/readme/wireframes)
+
+### Visual Design
+The goal of a good visual design should be to support the structure of the UI so that the user can achieve their goals easily. Therefore, the visual design for this project was kept simple and clean with the aim of having more focus on important features.
+
+#### Fonts
+The font family [Inter](https://fonts.google.com/specimen/Inter?query=inter) was chosen as the most suitable font for BiLINGUAL. With its simplicity, Inter is a great addition to the game’s UI as it doesn’t attract too much attention but is still able to be used to highlight key textual information.
+
+#### Colors
+As images are the key factor of the game, the color palette was kept simple to make sure the emphasis remains on images themselves. As a result, the rest of the UI doesn’t attract too much of the attention. Critical information, however, is highlighted with the vibrant primary color so that the user doesn’t miss any important feedback.
+![An Image previewing low-fi wireframes](assets/images/readme/colors.png)
+
+#### Accessibility
+The color palette has sufficient contrast and the fonts are well readable which ensures the game is accessible even to visitors with impaired vision.
