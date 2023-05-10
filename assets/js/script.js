@@ -1,5 +1,7 @@
 /*jshint esversion: 6 */
 
+// GAME CATEGORIES
+
 const foods = [
     {
         name: 'apple',
@@ -344,6 +346,10 @@ const animals = [
 
 const all = foods.concat(animals);
 
+// GAME CATEGORIES
+
+// GLOBAL VARIABLES
+
 const body = document.querySelector('body')
 const cards = document.querySelectorAll('.card');
 const questionWord = document.querySelector('.word');
@@ -361,6 +367,9 @@ let usersChoice;
 let highscore = localStorage.getItem('highscore') || 0;
 let highscoreCount = {value: highscore};
 
+// GLOBAL VARIABLES
+
+// returns a random index for any of the category arrays
 function getRandomIndex(itemList) {
     return Math.floor(Math.random() * itemList.length);
 }
@@ -371,7 +380,7 @@ function randomizeAndReduceList(itemList) {
     return itemList.sort(() => 0.5 - Math.random()).slice(0, 8);
 }
 
-// take each name of randomized array and push it into a new array
+// take each name of the shuffled category array and push it into a new array
 let translationListOfItems;
 function getTranslationListOfItems(itemList) {
     for (let item of itemList) {
@@ -379,13 +388,13 @@ function getTranslationListOfItems(itemList) {
     } return translationListOfItems;
 }
 
-// select word based on foods array and randomIndex
+// select word based on the categories array and randomIndex
 function randomizeQuestion(itemList, index) {
     questionWord.textContent = itemList[index].translation.de;
 }
 
-// check if questionWord is in the randomizedFoodName
-// if not randomize the array until it is
+// check if the prompted word and the corresponding category item are both displayed
+// and if not randomize the array until it is
 function checkRandomizedItems(itemList, correctedItemList, index) {
     if (!itemList.includes(questionWord.textContent)) {
         correctedItemList.pop();
@@ -394,14 +403,17 @@ function checkRandomizedItems(itemList, correctedItemList, index) {
     }
 }
 
-// display cards on the board
+// display cards with category images and alt tags
 function displayCards(itemList) {
     for (let i = 0; i < cards.length; i++) {
         cards[i].innerHTML = `<img src="${itemList[i].img}" alt="${itemList[i].translation.de}">`;
     }
 }
 
-// evaluate if clicked image matches the correct answer
+// 1. make cards clickable
+// 2. evaluate if clicked image matches the correct answer
+// 3. show different colors based on the answer the user gives
+// 4. start a next round
 function selectCardAndValidateAnswer() {
     for (let card of cards) {
         card.firstChild.addEventListener('click', function checkAnswer(e) {
@@ -430,6 +442,7 @@ function selectCardAndValidateAnswer() {
     }
 }
 
+// start a next round
 function startNextRound() {
     const randomIndex = getRandomIndex(usersChoice);
     const randomizedAndReducedList = randomizeAndReduceList(usersChoice);
@@ -445,7 +458,7 @@ function startNextRound() {
     selectCardAndValidateAnswer();
 }
 
-
+// clicking on one of the three categories starts a new game
 for (let category of categories) {
     category.addEventListener('click', () => {
         usersChoice = eval(category.id);
@@ -454,11 +467,12 @@ for (let category of categories) {
     });
 }
 
+
+// controls game settings that include modals, timer and saving the high score
 function setGameSettings() {
     body.classList.add('stop-scrolling');
     for (let category of categories) {
         category.addEventListener('click', () => {
-            // remove modal and start game
             modal.classList.add('hide-modal');
             body.classList.remove('stop-scrolling');
 
@@ -474,7 +488,7 @@ function setGameSettings() {
                     body.classList.add('stop-scrolling');
                     displayAnswerScore.innerHTML = `${correctAnswerCount}`;
 
-                    // use local storage to save highscore with help from https://www.youtube.com/watch?v=DFhmNLKwwGw
+                    // use local storage to save high score with help from https://www.youtube.com/watch?v=DFhmNLKwwGw
                     if (correctAnswerCount > highscore) {
                         highscoreCount.value = correctAnswerCount;
                         localStorage.setItem('highscore', highscoreCount.value);
