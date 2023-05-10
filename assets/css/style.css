@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@500;700&display=swap');
 
+/* GENERAL STYLES */
+
 * {
     padding: 0;
     margin: 0;
@@ -16,6 +18,14 @@ body {
     width: 920px;
     margin: 0 auto;
 }
+
+span {
+    color: #CF01A2;
+}
+
+/* GENERAL STYLES */
+
+/* TEXT STYLES */
 
 h1 {
     font-size: 48px;
@@ -34,6 +44,10 @@ h3 {
     font-weight: 400;
     text-align: center;
 }
+
+/* TEXT STYLES */
+
+/* COMPONENTS */
 
 .btn-primary-lg {
     width: fit-content;
@@ -84,24 +98,13 @@ h3 {
     cursor: pointer;
 }
 
-.highscore-display {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.highscore-value, .correct-answers {
-    display: block;
-    font-size: 24px;
-    font-weight: 700;
-}
-
-span {
-    color: #CF01A2;
-}
-
 .navbar {
     padding: 40px;
 }
+
+/* COMPONENTS */
+
+/* INTRODUCTION */
 
 .intro {
     display: flex;
@@ -118,6 +121,10 @@ span {
     font-size: 24px;
     font-weight: 700;
 }
+
+/* INTRODUCTION */
+
+/* GAME */
 
 .game-board {
     display: flex;
@@ -179,6 +186,25 @@ span {
     border-color: #DF4706;
 }
 
+/* GAME */
+
+/* SCORE */
+
+.highscore-display {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.highscore-value, .correct-answers {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* SCORE */
+
+/* MODALS */
+
 .modal-container {
     position: absolute;
     top: 0;
@@ -236,12 +262,6 @@ span {
     gap: 16px;
 }
 
-.game-type {
-    position: absolute;
-    width: 0;
-    height: 0;
-}
-
 .start-game {
     display: flex;
     font-weight: 700;
@@ -258,6 +278,10 @@ span {
     color: #CF01A2;
     border: 2px solid #CF01A2;
 }
+
+/* MODALS */
+
+/* MEDIA QUERIES */
 
 @media screen and (max-width: 1110px) {
 
@@ -328,3 +352,5 @@ span {
     }
 
 }
+
+/* MEDIA QUERIES */
