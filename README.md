@@ -6,6 +6,8 @@ Although learning a new language is a great thing, it can oftentimes end up bein
 
 BiLINGUAL was built to help with this endeavor. The users can learn German vocabulary by playing a simple but fun game.
 
+[Link to the game](https://dev-timm.github.io/bilingual/)
+
 ![An Image previewing all devices](assets/images/readme/device-preview.png)
 
 ## Product Decisions
