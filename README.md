@@ -11,7 +11,6 @@ BiLINGUAL was built to help with this endeavor. The users can learn German vocab
 ## Product Decisions
 
 ### User Needs
-
 As a person who...
 
 - is learning a new language I want to master basic vocabulary quickly so that I can start interacting with native speakers.
@@ -94,7 +93,6 @@ Each page of the deployed website has been tested multiple times with Google Chr
 ![An Image showing the lighthouse score for mobile](assets/images/readme/lighthouse-mobile.png)
 
 ### Tested Devices & Browsers
-
 - iPhone 11
     - Safari
 - Macbook Pro 2019 16-inch
@@ -103,7 +101,6 @@ Each page of the deployed website has been tested multiple times with Google Chr
     - Firefox
 
 ### Feature Testing
-
 | Feature | Action | Expected Behaviour | Pass/Fail
 | --- | --- | --- | --- |
 | Header | Click on logo | Opens homepage | Pass
@@ -114,18 +111,42 @@ Each page of the deployed website has been tested multiple times with Google Chr
 | Settings Modal | Click on "Animals" button | Starts game with animal type cards | Pass
 | Settings Modal | Click on "Foods & Animals" button | Starts game with a mix of food and animal type cards | Pass
 | Settings Modal | Click on "Go Back" button | Opens homepage | Pass
-| Word Prompt | Play game | Word changes randomly with every given answer | Pass
-| Timer | Start game | Timer goes down after starting the game until it reaches 0 which stops the game | Pass
-| Game Grid | Click on correct card | Card turns green and new round starts | Pass
-| Game Grid | Click on wrong card | Card turns orange and new round starts | Pass
+| Word Prompt | While playing the game | Word changes randomly with every given answer | Pass
+| Timer | Starting the game | Timer goes down after starting the game until it reaches 0 which stops the game | Pass
+| Game Grid | Click on correct card | Card turns green and new prompt starts | Pass
+| Game Grid | Click on wrong card | Card turns orange and new prompt starts | Pass
 | Game Grid | Click on more than one card before new set of card is dispayed | Only first card is selected | Fail
-| Correct Answers | click correct card | Adds 1 to the counter | Pass
+| Correct Answers | Click on correct card | Increases correct answer amount by 1 | Pass
+| Correct Answers | Click on wrong card | Correct answer amount not affected | Pass
 | Game Over Modal | Timer reaches 0 | Shows the total number of correct given answers | Pass
-| Game Over Modal | click "Play Again" | Starts a new game and shows the settings modal | Pass
-| Game Over Modal | click "Go Back" | Starts a new game and shows the settings modal | Pass
+| Game Over Modal | Click on "Play Again" button | Shows the settings modal to start a new game | Pass
+| Game Over Modal | Click on "Go Back" button | Opens homepage | Pass
 
-### Unfixed Bugs
+### Currently Known Bugs
 
-Currently is is possible to select more than one card before the next set of cards are displayed. This can lead to the user first selecting the wrong card but then quickly selecting the right card before the cards will e randomized again. However, it is not possible to select the correct answer multiple times to gain more points. 
+#### Select Multiple Cards
+Currently it is possible to select more than one card before the next set of cards is displayed. This can lead to the user first selecting the wrong card but then quickly selecting the right card before the cards will be randomized again. However, it is not possible to select the correct answer multiple times to gain more points. 
 
-After the game is finished the user can disable the Game Over modal and continue clicking on the cards and gain points. Since the game doesn't offer any ranking among users this is not a breaking bug and only affects the own score.
+#### Unlimited Game Session
+After the game has finished, the user can disable the Game Over modal via browser's developer tools and continue clicking on the cards and gain points. Since the game is built for personal use and doesn't offer any ranking among users, this is not a breaking bug and only affects the own score.
+
+## Deployment
+
+### Deploying the website to GitHub Pages:
+1. Visit the GitHub page of the website’s repository.
+2. Click on “Settings”.
+3. Click on “Pages” inside the left sidebar.
+4. Make sure “Deploy from a branch” is selected under the "Source" section.
+5. Change branch from “None” to “main”.
+6. Click on the "Save" button.
+7. If everything's done right, in less than a minute a banner should appear on top of the same page containing the website's link (which is now hosted on GitHub Pages).
+The link to the deployed website of this project can be found here.
+
+### Cloning the repository
+1. Visit the GitHub page of the website’s repository.
+2. Click the “Code” button on top of the page.
+3. Click on “HTTPS” below the “Clone” section.
+4. Click on the copy button next to the link to copy it.
+5. Open your IDE.
+6. Type git clone ```git clone <copied URL>``` into the terminal.
+7. If everything's done right, you should now see a cloned repository in your IDE.
