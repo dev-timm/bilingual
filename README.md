@@ -88,11 +88,11 @@ Each page of the deployed website has been tested multiple times with Google Chr
 
 #### Desktop
 
-![An Image showing the lighthouse score for desktop](assets/images/readme/lighthouse-desktop.png)
+![lighthouse score for desktop](assets/images/readme/lighthouse-desktop.png)
 
 #### Mobile
 
-![An Image showing the lighthouse score for mobile](assets/images/readme/lighthouse-mobile.png)
+![lighthouse score for mobile](assets/images/readme/lighthouse-mobile.png)
 
 ### Tested Devices & Browsers
 - iPhone 11
