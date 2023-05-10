@@ -150,3 +150,19 @@ The link to the deployed website of this project can be found here.
 5. Open your IDE.
 6. Type git clone ```git clone <copied URL>``` into the terminal.
 7. If everything's done right, you should now see a cloned repository in your IDE.
+
+## Credits 
+
+### Images
+- all images for the game are taken from [unsplash.com](https://unsplash.com/)
+- the device preview image for the README.md is taken with the help of [ui.dev/amiresponsive](https://ui.dev/amiresponsive)
+
+### Code
+Solutions that helped me with:
+- [shuffle the array](https://www.youtube.com/watch?v=5sNGqsMpW1E)
+- [set up a timer](https://www.youtube.com/watch?v=GhePFBkdNYk)
+- [use local storage](https://www.youtube.com/watch?v=DFhmNLKwwGw)
+
+### Thank You
+- to my mentor Dick for supporting me with his feedback throughout the entire project
+- to my wife Valentina for making sure I always get the time and anything else I need for working on this course and projects
