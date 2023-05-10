@@ -77,3 +77,55 @@ The game screen shows 8 random cards which include images that are based on the 
 The game over modal shows up as soon as the timer reaches 0. It notifies the user that the game has ended and displays the number of correctly given answers. It also gives the user the choice to start a new game or go back to the homepage.
 
 ![An Image shwoing the intro of the homepage](assets/images/readme/modal-score.png)
+
+## Testing
+
+All webpages were tested with an [HTML Validator](https://validator.w3.org/), [CSS Validator](https://jigsaw.w3.org/css-validator/) and a [JS Validator](https://jshint.com/) and no significant issues were found.
+
+### Lighthouse
+Each page of the deployed website has been tested multiple times with Google Chrome's Lighhouse feature to ensure all scores have been above 90 for both mobile and desktop devices.
+
+#### Desktop
+
+![An Image showing the lighthouse score for desktop](assets/images/readme/lighthouse-desktop.png)
+
+#### Mobile
+
+![An Image showing the lighthouse score for mobile](assets/images/readme/lighthouse-mobile.png)
+
+### Tested Devices & Browsers
+
+- iPhone 11
+    - Safari
+- Macbook Pro 2019 16-inch
+    - Chrome
+    - Safari
+    - Firefox
+
+### Feature Testing
+
+| Feature | Action | Expected Behaviour | Pass/Fail
+| --- | --- | --- | --- |
+| Header | Click on logo | Opens homepage | Pass
+| Intro | Click on "Play Game" button | Opens game page with settings modal | Pass
+| High Score | Go to homepage after playing the game | Shows highest amount of correct answers | Pass
+| High Score | Close website and open it again | Still shows the highest score from previous sessions | Pass
+| Settings Modal | Click on "Foods" button | Starts game with food type cards | Pass
+| Settings Modal | Click on "Animals" button | Starts game with animal type cards | Pass
+| Settings Modal | Click on "Foods & Animals" button | Starts game with a mix of food and animal type cards | Pass
+| Settings Modal | Click on "Go Back" button | Opens homepage | Pass
+| Word Prompt | Play game | Word changes randomly with every given answer | Pass
+| Timer | Start game | Timer goes down after starting the game until it reaches 0 which stops the game | Pass
+| Game Grid | Click on correct card | Card turns green and new round starts | Pass
+| Game Grid | Click on wrong card | Card turns orange and new round starts | Pass
+| Game Grid | Click on more than one card before new set of card is dispayed | Only first card is selected | Fail
+| Correct Answers | click correct card | Adds 1 to the counter | Pass
+| Game Over Modal | Timer reaches 0 | Shows the total number of correct given answers | Pass
+| Game Over Modal | click "Play Again" | Starts a new game and shows the settings modal | Pass
+| Game Over Modal | click "Go Back" | Starts a new game and shows the settings modal | Pass
+
+### Unfixed Bugs
+
+Currently is is possible to select more than one card before the next set of cards are displayed. This can lead to the user first selecting the wrong card but then quickly selecting the right card before the cards will e randomized again. However, it is not possible to select the correct answer multiple times to gain more points. 
+
+After the game is finished the user can disable the Game Over modal and continue clicking on the cards and gain points. Since the game doesn't offer any ranking among users this is not a breaking bug and only affects the own score.
