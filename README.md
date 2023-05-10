@@ -29,7 +29,7 @@ For the MVP it was important to have the basic concept of the game running. Duri
 ### Design Process
 To make sure that the focus lies on the functionality, the design process of the game was first captured in low-fidelity mockups before adding visuals.
 
-![An Image previewing low-fi wireframes](assets/images/readme/low-fi-example.png)
+![preview of low-fi wireframes](assets/images/readme/low-fi-example.png)
 
 All wireframe can be found [here](https://github.com/dev-timm/bilingual/tree/main/assets/images/readme/wireframes)
 
@@ -42,7 +42,7 @@ The font family [Inter](https://fonts.google.com/specimen/Inter?query=inter) was
 #### Colors
 As images are the key factor of the game, the color palette was kept simple to make sure the emphasis remains on images themselves. As a result, the rest of the UI doesn’t attract too much of the attention. Critical information, however, is highlighted with the vibrant primary color so that the user doesn’t miss any important feedback.
 
-![An Image previewing low-fi wireframes](assets/images/readme/colors.png)
+![preview of the games color palette](assets/images/readme/colors.png)
 
 #### Accessibility
 The color palette has sufficient contrast and the fonts are well readable which ensures the game is accessible even to visitors with impaired vision.
