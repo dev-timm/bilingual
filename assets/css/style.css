@@ -37,19 +37,19 @@ span {
 /* TEXT STYLES */
 
 h1 {
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: 700;
     text-align: center;
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 400;
     text-align: center;
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 400;
     text-align: center;
 }
@@ -61,7 +61,7 @@ h3 {
 .btn-primary-lg {
     width: fit-content;
     color: #fff;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
     text-decoration: none;
     background-color: #CF01A2;
@@ -77,7 +77,7 @@ h3 {
 .btn-primary-md {
     width: fit-content;
     color: #fff;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
     background-color: #CF01A2;
@@ -93,7 +93,7 @@ h3 {
 .btn-secondary-md {
     width: fit-content;
     color: #CF01A2;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
     background-color: #fff;
@@ -127,7 +127,7 @@ h3 {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
@@ -206,7 +206,7 @@ h3 {
 
 .highscore-value, .correct-answers {
     display: block;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
@@ -253,8 +253,8 @@ h3 {
 }
 
 .display-answers {
-    font-size: 32px;
-    line-height: 140%;
+    font-size: 2rem;
+    line-height: 3rem;
     font-weight: 700;
     text-align: center;
 }
@@ -303,11 +303,11 @@ h3 {
 @media screen and (max-width: 480px) {
 
     h1 {
-        font-size: 32px;
+        font-size: 2rem;
     }
 
     h2 {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
     
     .container {
