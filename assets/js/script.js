@@ -346,6 +346,21 @@ const animals = [
 
 const all = foods.concat(animals);
 
+const categoriesBundle = [
+    {
+        categoryId: 'foods',
+        categoryList: foods
+    },
+    {
+        categoryId: 'animals',
+        categoryList: animals
+    },
+    {
+        categoryId: 'all',
+        categoryList: all
+    }
+]; 
+
 // GAME CATEGORIES
 
 // GLOBAL VARIABLES
@@ -358,7 +373,7 @@ const timer = document.querySelector('.timer');
 const modal = document.querySelector('.modal-container');
 const hideModal = document.querySelector('.hide-modal');
 const displayAnswerScore = document.querySelector('.display-answers span');
-const categories = document.querySelectorAll('.start-game');
+const gameOptions = document.querySelectorAll('.start-game');
 
 let correctAnswerCount = 0;
 let currentTime = 45;
@@ -459,20 +474,22 @@ function startNextRound() {
 }
 
 // clicking on one of the three categories starts a new game
-for (let category of categories) {
-    category.addEventListener('click', (e) => {
-        // prepared a safer solution than using eval() with the help frpm https://stackoverflow.com/questions/2573548/given-a-string-describing-a-javascript-function-convert-it-to-a-javascript-func
-        usersChoice = Function('return ' + category.id)(); 
+for (let option of gameOptions) {
+    option.addEventListener('click', () => {
+        for (let categoryObject of categoriesBundle) {
+            if (option.id === categoryObject.categoryId ) {
+                usersChoice = categoryObject.categoryList;
+            }
+        }
         startNextRound();
     });
 }
 
-
 // controls game settings that include modals, timer and saving the high score
 function setGameSettings() {
     body.classList.add('stop-scrolling');
-    for (let category of categories) {
-        category.addEventListener('click', () => {
+    for (let option of gameOptions) {
+        option.addEventListener('click', () => {
             modal.classList.add('hide-modal');
             body.classList.remove('stop-scrolling');
 
