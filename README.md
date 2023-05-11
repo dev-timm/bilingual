@@ -79,6 +79,11 @@ The game over modal shows up as soon as the timer reaches 0. It notifies the use
 
 ![preview of game over modal](assets/images/readme/modal-score.png)
 
+### 404 Page
+In case the user enters an incorrect link, a 404 page appears that guides the user back to the homepage.
+
+![preview of game over modal](assets/images/readme/404.png)
+
 ## Testing
 
 All webpages were tested with an [HTML Validator](https://validator.w3.org/), [CSS Validator](https://jigsaw.w3.org/css-validator/) and a [JS Validator](https://jshint.com/) and no significant issues were found.
@@ -123,6 +128,8 @@ Each page of the deployed website has been tested multiple times with Google Chr
 | Game Over Modal | Timer reaches 0 | Shows the total number of correctly given answers | Pass
 | Game Over Modal | Click on "Play Again" button | Shows the settings modal to start a new game | Pass
 | Game Over Modal | Click on "Go Back" button | Opens homepage | Pass
+| 404 Page | Enter incorrect link to the web app | Opens 404 page | Pass
+| 404 Page | Click on "Return to Homepage" button | Opens homepage | Pass
 
 ### Currently Known Bugs
 
