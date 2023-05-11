@@ -359,7 +359,7 @@ const categoriesBundle = [
         categoryId: 'all',
         categoryList: all
     }
-]; 
+];
 
 // GAME CATEGORIES
 
@@ -380,7 +380,7 @@ let currentTime = 45;
 let usersChoice;
 
 let highScore = localStorage.getItem('highScore') || 0;
-let highScoreCount = {value: highScore};
+let highScoreCount = { value: highScore };
 
 // GLOBAL VARIABLES
 
@@ -477,7 +477,7 @@ function startNextRound() {
 for (let option of gameOptions) {
     option.addEventListener('click', () => {
         for (let categoryObject of categoriesBundle) {
-            if (option.id === categoryObject.categoryId ) {
+            if (option.id === categoryObject.categoryId) {
                 usersChoice = categoryObject.categoryList;
             }
         }
