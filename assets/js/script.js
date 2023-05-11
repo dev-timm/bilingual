@@ -350,7 +350,7 @@ const all = foods.concat(animals);
 
 // GLOBAL VARIABLES
 
-const body = document.querySelector('body')
+const body = document.querySelector('body');
 const cards = document.querySelectorAll('.card');
 const questionWord = document.querySelector('.word');
 const correctAnswers = document.querySelector('.correct-answers');
@@ -460,10 +460,10 @@ function startNextRound() {
 
 // clicking on one of the three categories starts a new game
 for (let category of categories) {
-    category.addEventListener('click', () => {
-        usersChoice = eval(category.id);
+    category.addEventListener('click', (e) => {
+        // prepared a safer solution than using eval() with the help frpm https://stackoverflow.com/questions/2573548/given-a-string-describing-a-javascript-function-convert-it-to-a-javascript-func
+        usersChoice = Function('return ' + category.id)(); 
         startNextRound();
-        console.log(usersChoice);
     });
 }
 

@@ -164,6 +164,7 @@ Solutions that helped me with:
 - [shuffle the array](https://www.youtube.com/watch?v=5sNGqsMpW1E)
 - [set up a timer](https://www.youtube.com/watch?v=GhePFBkdNYk)
 - [use local storage](https://www.youtube.com/watch?v=DFhmNLKwwGw)
+- [how to replace eval() when using string as a variable](https://stackoverflow.com/questions/2573548/given-a-string-describing-a-javascript-function-convert-it-to-a-javascript-func)
 
 ### Thank You
 - to my mentor Dick for supporting me with his feedback throughout the entire project
