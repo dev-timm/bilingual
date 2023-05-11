@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@500;700&display=swap');
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 /* GENERAL STYLES */
 
@@ -24,10 +31,17 @@ span {
 }
 
 .flex-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     text-align: center;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-top: 100px;
     gap: 40px;
 }
@@ -59,6 +73,8 @@ h3 {
 /* COMPONENTS */
 
 .btn-primary-lg {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     color: #fff;
     font-size: 1.5rem;
@@ -75,6 +91,8 @@ h3 {
 }
 
 .btn-primary-md {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     color: #fff;
     font-size: 1rem;
@@ -91,6 +109,8 @@ h3 {
 }
 
 .btn-secondary-md {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     color: #CF01A2;
     font-size: 1rem;
@@ -116,16 +136,27 @@ h3 {
 /* INTRODUCTION */
 
 .intro {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin-top: 100px;
     gap: 48px;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .explainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 8px;
     font-size: 1.5rem;
     font-weight: 700;
@@ -136,23 +167,40 @@ h3 {
 /* GAME */
 
 .game-board {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin-top: 40px;
     gap: 48px;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .word-question {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     gap: 16px;
 }
 
 .card-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .card {
@@ -161,7 +209,8 @@ h3 {
     margin: 8px;
     border: 4px solid #fff;
     border-radius: 2px;
-    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+    -webkit-filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+            filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
 }
 
 .card:hover {
@@ -232,7 +281,11 @@ h3 {
 
 .modal-content {
     position: absolute;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     padding: 48px;
     margin: auto;
@@ -242,9 +295,16 @@ h3 {
     left: 0;
     background-color: #fff;
     border-radius: 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 40px;
 }
 
@@ -260,24 +320,35 @@ h3 {
 }
 
 .actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 16px;
 }
 
 .game-selection {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     gap: 16px;
 }
 
 .start-game {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     font-weight: 700;
     width: 140px;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding: 12px;
-    background-color: #fff;
+    background-color: #ffffff;
     border: 2px solid #DCD3DA;
     border-radius: 4px;
     cursor:pointer;
