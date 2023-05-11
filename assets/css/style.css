@@ -199,12 +199,12 @@ h3 {
 
 /* SCORE */
 
-.highscore-display {
+.high-score-display {
     margin-top: 40px;
     text-align: center;
 }
 
-.highscore-value, .correct-answers {
+.high-score-value, .correct-answers {
     display: block;
     font-size: 1.5rem;
     font-weight: 700;

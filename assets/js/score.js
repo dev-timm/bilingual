@@ -1,8 +1,8 @@
 /*jshint esversion: 6 */
 
-const highscoreValue = document.querySelector('.highscore-value');
+const highScoreValue = document.querySelector('.high-score-value');
 
-let highscore = localStorage.getItem('highscore') || 0;
+let highScore = localStorage.getItem('highScore') || 0;
 
 // display high score on homepage
-highscoreValue.innerText = highscore;
+highScoreValue.innerText = highScore;

@@ -379,8 +379,8 @@ let correctAnswerCount = 0;
 let currentTime = 45;
 let usersChoice;
 
-let highscore = localStorage.getItem('highscore') || 0;
-let highscoreCount = {value: highscore};
+let highScore = localStorage.getItem('highScore') || 0;
+let highScoreCount = {value: highScore};
 
 // GLOBAL VARIABLES
 
@@ -506,9 +506,9 @@ function setGameSettings() {
                     displayAnswerScore.innerHTML = `${correctAnswerCount}`;
 
                     // use local storage to save high score with help from https://www.youtube.com/watch?v=DFhmNLKwwGw
-                    if (correctAnswerCount > highscore) {
-                        highscoreCount.value = correctAnswerCount;
-                        localStorage.setItem('highscore', highscoreCount.value);
+                    if (correctAnswerCount > highScore) {
+                        highScoreCount.value = correctAnswerCount;
+                        localStorage.setItem('highScore', highScoreCount.value);
                     }
                 }
             }
